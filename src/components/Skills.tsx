@@ -1,41 +1,41 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, Terminal, ShieldCheck, Sparkles } from "lucide-react";
+import { Code2, Cpu, Database, ShieldCheck } from "lucide-react";
 
 export default function Skills() {
   const skillCategories = [
     {
-      icon: Sparkles,
-      title: "Prompt Engineering & AI Workflows",
+      icon: Code2,
+      title: "System & Application Development",
       skills: [
-        "Claude System Prompting",
-        "AI-Assisted UI Scaffolding",
-        "Structured Context Framing",
-        "Code Refactoring with LLMs",
-        "Human-in-the-Loop Workflows"
-      ]
-    },
-    {
-      icon: Terminal,
-      title: "Frontend & Web Architecture",
-      skills: [
-        "Next.js (App Router)",
-        "React & TypeScript",
-        "Tailwind CSS v4",
-        "Framer Motion",
-        "REST API & State Management"
+        "Web Apps (React, Next.js, Laravel)",
+        "Mobile Apps (Flutter)",
+        "Languages (Python, Java, PHP, C++)",
+        "WordPress Administration & SEO",
+        "Git & Preview-to-Live Deployments"
       ]
     },
     {
       icon: ShieldCheck,
-      title: "Leadership & Governance",
+      title: "Governance, Risk & Compliance",
       skills: [
-        "Cohort Mentorship & Enablement",
-        "IT Governance & GRC Frameworks",
-        "Event & Community Management",
-        "Product Roadmap & Agile Planning",
-        "Strategic Decision-Making"
+        "GRC & ISO Compliance Review",
+        "Third-Party & Procurement Risk",
+        "Access Control & Security Checks",
+        "SOP & System Documentation",
+        "Requirements Analysis (SRS, UML)"
+      ]
+    },
+    {
+      icon: Database,
+      title: "Data & Security",
+      skills: [
+        "Data Analysis (Excel, Power BI)",
+        "Machine Learning (Python, Google Colab)",
+        "Security Testing (Burp Suite, OWASP ZAP)",
+        "Network & Forensics (Wireshark, Kali Linux)",
+        "Command Line (Linux, Windows)"
       ]
     }
   ];
@@ -46,11 +46,11 @@ export default function Skills() {
         <div className="mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/30 bg-accent/10 text-xs font-medium text-accent mb-4">
             <Cpu size={14} />
-            Technical Stack & Expertise
+            Skills & Expertise
           </div>
           <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4">Core Capabilities</h2>
           <p className="text-muted text-lg max-w-2xl">
-            A structured breakdown of AI prompting engineering, production web architecture, and community leadership capabilities.
+            Hands-on development skills, supported by experience in governance, data, and security.
           </p>
         </div>
 
