@@ -21,16 +21,16 @@ export default function Leadership() {
       image: "/images/novo.jpeg"
     },
     {
-      title: "Active Member & AI Advocate",
+      title: "Member, Application Security",
       organization: "Google Developer Groups (GDG)",
-      description: "Participating in secure tech, developer workshops, and sharing AI workflow best practices with peers.",
+      description: "Performed SBOM-based analysis of mobile apps and CI/CD pipelines, and contributed to attack-surface mapping and threat assessment.",
       link: "https://gdgbandung.com/",
       image: "/images/gdgbdg.webp"
     },
     {
       title: "Active Member / Digistars",
       organization: "Digistar Club by Telkom Indonesia",
-      description: "Actively involved in cultivating digital talent, exploring generative AI applications, and frontend tech.",
+      description: "Active in digital talent programs focused on business analytics, data-driven insight, and sustainable B2B growth.",
       link: "https://digistartelkom.id/",
       image: "/images/digistar.png"
     }
@@ -40,13 +40,13 @@ export default function Leadership() {
     <section id="leadership" className="py-24 px-6 md:px-12 lg:px-24">
       <div className="w-full">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4">Leadership & Community</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4">Community & Organizations</h2>
           <p className="text-muted text-lg max-w-2xl mb-6">
-            Driving impact through cohort mentorship and youth mobilization across tech and business sectors.
+            Communities where I learn, contribute, and help peers across tech and business.
           </p>
           <div className="p-4 rounded-xl bg-surface border border-accent/30 text-sm text-foreground/90 max-w-3xl flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse shrink-0"></span>
-            <span><strong>Ambassador Community Goal:</strong> Fostering AI literacy, teaching structured prompt engineering with Claude, and empowering student builders across Telkom University & West Java developer networks.</span>
+            <span><strong>Beyond Work:</strong> Mentoring student founders, contributing to application security research, and joining digital talent programs across Telkom University & West Java.</span>
           </div>
         </div>
 
