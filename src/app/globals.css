@@ -11,8 +11,9 @@
   --color-surface-border: #27272A;
   
   --color-muted: #A1A1AA;
-  --color-accent: #D9643A;
-  --color-accent-hover: #E07A5F;
+  --color-accent: #2F7BEA;
+  /* Hover follows the accent, so changing --color-accent at runtime updates both. */
+  --color-accent-hover: color-mix(in oklab, var(--color-accent), white 18%);
 }
 
 @layer base {
