@@ -6,19 +6,40 @@ import { Briefcase } from "lucide-react";
 export default function Experience() {
   const experiences = [
     {
-      role: "Web Management & Sustainability Intern",
-      company: "Directorate of Assets & Sustainability, Telkom University",
-      period: "October 2025 – February 2026"
+      role: "IT Infrastructure & Risk Engineer",
+      company: "PWG",
+      period: "July 2025 – October 2026",
+      highlights: [
+        "Translated business needs into features, including an admin panel for accounts and payments plus 20 invitation templates, backed by documented design standards and role-based access control.",
+        "Worked within a small development team to combine each member's work into regular releases, tested on a preview site before going live."
+      ]
+    },
+    {
+      role: "Website Management & Sustainability Intern",
+      company: "Directorate of Assets & Sustainability (PUTI), Telkom University",
+      period: "October 2025 – February 2026",
+      highlights: [
+        "Authored SOPs for platform operations covering logging, updates, security checks, and maintenance records.",
+        "Ran performance and security audits, backups, and plugin reviews on the WordPress platform, and aligned sustainability content with Green Campus standards."
+      ]
     },
     {
       role: "GRC Analyst Intern",
       company: "PT Media Telekomunikasi Mandiri",
-      period: "September 2025 – December 2025"
+      period: "September 2025 – December 2025",
+      highlights: [
+        "Evaluated GRC and ISO compliance, identified gaps, and drove mitigation actions.",
+        "Reviewed third-party risk and procurement, and embedded IT governance into the project lifecycle to align delivery with business and regulatory needs."
+      ]
     },
     {
-      role: "MIS Intern",
-      company: "PT Borneo Pasifik Global",
-      period: "July 2025 – October 2025"
+      role: "Management Information Systems Intern",
+      company: "PT Borneo Pasifik Global (Mining Head Office)",
+      period: "July 2025 – October 2025",
+      highlights: [
+        "Streamlined the end-to-end PBJ-GI approval workflow and drafted business blueprint documents (organization, systems, ERP procedures) for audit readiness.",
+        "Validated logistics and master data using Power BI, Excel, and ML-based anomaly detection to enforce SOP compliance, and trained users on the system."
+      ]
     }
   ];
 
@@ -53,6 +74,14 @@ export default function Experience() {
                 <Briefcase size={16} />
                 <span className="font-medium text-sm">{exp.company}</span>
               </div>
+              <ul className="space-y-2 max-w-3xl">
+                {exp.highlights.map((point) => (
+                  <li key={point} className="flex gap-2.5 text-sm text-muted leading-relaxed">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent/70 mt-2 shrink-0"></span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

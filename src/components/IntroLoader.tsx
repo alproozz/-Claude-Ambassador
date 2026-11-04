@@ -30,7 +30,7 @@ export default function IntroLoader() {
     >
       {/* Top Eyelid */}
       <motion.div
-        className="absolute top-0 left-0 right-0 w-full h-[50vh] bg-[#F9F9F6] border-b border-[#0E0F11]/10 z-20"
+        className="absolute top-0 left-0 right-0 w-full h-[50vh] bg-foreground border-b border-background/10 z-20"
         initial={{ y: "0%" }}
         animate={{ 
           y: ["0%", "0%", "-8%", "0%", "0%", "-100%"] 
@@ -44,7 +44,7 @@ export default function IntroLoader() {
       
       {/* Bottom Eyelid */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 w-full h-[50vh] bg-[#F9F9F6] border-t border-[#0E0F11]/10 z-20"
+        className="absolute bottom-0 left-0 right-0 w-full h-[50vh] bg-foreground border-t border-background/10 z-20"
         initial={{ y: "0%" }}
         animate={{ 
           y: ["0%", "0%", "8%", "0%", "0%", "100%"] 
@@ -67,7 +67,7 @@ export default function IntroLoader() {
           ease: "easeInOut" 
         }}
       >
-        <h1 className="text-3xl md:text-5xl font-serif font-medium text-[#0E0F11] tracking-wide mb-4">
+        <h1 className="text-3xl md:text-5xl font-serif font-medium text-background tracking-wide mb-4">
           M. Aulia Priadana Setiawankusuma
         </h1>
         <div className="flex items-center gap-3">
