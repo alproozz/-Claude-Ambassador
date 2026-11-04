@@ -1,9 +1,9 @@
-# M. Aulia Priadana Setiawankusuma | Claude Ambassador Portfolio
+# M. Aulia Priadana Setiawankusuma | Portfolio
 
-Engineering Structured Systems. Deploying Practical AI.
+Engineering Structured Systems. Aligning Technology with Business.
 
 ## 🚀 Overview
-Portfolio website for **M. Aulia Priadana Setiawankusuma**, Informatics Engineering Student at Telkom University & Tech Leader. Built with modern web standards, featuring dynamic visual architecture, sleek interactive elements, and Anthropic Claude aesthetic design system.
+Portfolio website for **M. Aulia Priadana Setiawankusuma**, Informatics graduate from Telkom University building systems and applications, with experience in IT governance, risk & compliance (GRC), and information systems. Built with modern web standards, featuring dynamic visual architecture and sleek interactive elements.
 
 ## 🛠️ Tech Stack
 - **Framework:** Next.js (App Router)
