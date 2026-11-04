@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
         <div className="max-w-md">
           <p className="font-serif italic text-xl md:text-2xl text-foreground mb-4">
-            Open for AI Governance, Software Systems, and Community Leadership.
+            Open to opportunities in system & application development, information systems, and IT governance.
           </p>
-          <a href="mailto:contact@example.com" className="inline-block text-accent hover:text-accent-hover font-medium transition-colors border-b border-accent/30 hover:border-accent">
-            Let's build something impactful.
+          <a href="mailto:priadanasetiawan@gmail.com" className="inline-block text-accent hover:text-accent-hover font-medium transition-colors border-b border-accent/30 hover:border-accent">
+            Let&apos;s work together.
           </a>
         </div>
         
@@ -24,7 +24,7 @@ export default function Footer() {
             <FiLinkedin size={18} strokeWidth={1.5} />
           </a>
           <a 
-            href="https://github.com" 
+            href="https://github.com/alproozz"
             target="_blank" 
             rel="noreferrer"
             className="w-10 h-10 rounded-full border border-surface-border bg-surface flex items-center justify-center text-muted hover:text-foreground hover:border-accent/50 transition-all"
@@ -42,7 +42,7 @@ export default function Footer() {
             <FiTwitter size={18} strokeWidth={1.5} />
           </a>
           <a 
-            href="mailto:contact@example.com" 
+            href="mailto:priadanasetiawan@gmail.com"
             className="w-10 h-10 rounded-full border border-surface-border bg-surface flex items-center justify-center text-muted hover:text-foreground hover:border-accent/50 transition-all"
             aria-label="Email"
           >

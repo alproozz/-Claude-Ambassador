@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
-import AIPhilosophy from "@/components/AIPhilosophy";
+import Approach from "@/components/Approach";
 import Skills from "@/components/Skills";
 import Leadership from "@/components/Leadership";
 import Experience from "@/components/Experience";
@@ -15,7 +15,7 @@ export default function Home() {
       <div className="flex-1">
         <Hero />
         <Projects />
-        <AIPhilosophy />
+        <Approach />
         <Skills />
         <Leadership />
         <Experience />

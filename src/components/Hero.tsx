@@ -22,9 +22,9 @@ export default function Hero() {
   };
 
   const metrics = [
-    { value: "3+", label: "Corporate & Campus Internships" },
-    { value: "14", label: "Member Cohort Led (YEC Camp HIPMI)" },
-    { value: "3", label: "Live Deployments (Marcode.id, Savanoir, Smart Museum+)" },
+    { value: "4", label: "Roles across Development, GRC & MIS (2025–2026)" },
+    { value: "20", label: "Invitation Templates + Admin Panel Delivered (PWG)" },
+    { value: "3.6", label: "GPA, Informatics, Telkom University" },
   ];
 
   return (
@@ -41,7 +41,7 @@ export default function Hero() {
           {/* Eyebrow Badge */}
           <motion.div variants={item} className="mb-6 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-surface-border bg-surface text-xs font-medium text-muted">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-            Tech Leader & Informatics Student @ Telkom University
+            Informatics Graduate @ Telkom University
           </motion.div>
 
           {/* Headline */}
@@ -50,7 +50,7 @@ export default function Hero() {
             className="text-4xl md:text-6xl font-serif font-medium tracking-tight text-foreground leading-[1.1] mb-6"
           >
             Engineering Structured Systems.<br />
-            <span className="italic text-muted">Advocating Frontier AI & Claude.</span>
+            <span className="italic text-muted">Aligning Technology with Business.</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -58,7 +58,7 @@ export default function Hero() {
             variants={item}
             className="text-lg md:text-xl text-muted max-w-2xl mb-10 leading-relaxed"
           >
-            Bridging software architecture, IT governance (GRC), and Anthropic Claude workflows. Experienced in leading student cohorts, deploying modern web platforms, and designing structured prompt systems for real-world impact.
+            Informatics graduate who builds and maintains systems and applications, from web platforms and admin panels to data workflows. Along the way I have gained hands-on experience in GRC, ISO compliance, and information systems, so what I build stays well-documented, secure, and reliable.
           </motion.p>
 
           {/* CTAs */}

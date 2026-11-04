@@ -16,10 +16,11 @@ const newsreader = Newsreader({
 });
 
 import IntroLoader from "@/components/IntroLoader";
+import ColorPicker from "@/components/ColorPicker";
 
 export const metadata: Metadata = {
   title: "M. Aulia Priadana Setiawankusuma | Portfolio",
-  description: "Engineering Structured Systems. Deploying Practical AI.",
+  description: "Engineering Structured Systems. Informatics graduate building systems and applications, with experience in IT governance, risk & compliance, and information systems.",
 };
 
 export default function RootLayout({
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <IntroLoader />
         {children}
+        <ColorPicker />
       </body>
     </html>
   );
