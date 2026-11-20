@@ -14,6 +14,8 @@ interface PixelRevealImageProps {
   duration?: number;
   /** "ltr": band sweeps left -> right; "rtl": right -> left */
   direction?: "ltr" | "rtl";
+  /** Preload the image (above-the-fold hero usage). */
+  preload?: boolean;
 }
 
 /**
@@ -29,9 +31,10 @@ export default function PixelRevealImage({
   alt,
   sizes,
   imgClassName,
-  delay = 3800,
+  delay = 3000,
   duration = 1600,
   direction = "ltr",
+  preload = false,
 }: PixelRevealImageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -200,7 +203,7 @@ export default function PixelRevealImage({
 
   return (
     <div ref={containerRef} className="absolute inset-0">
-      <Image src={src} alt={alt} fill className={imgClassName} sizes={sizes} />
+      <Image src={src} alt={alt} fill className={imgClassName} sizes={sizes} preload={preload} />
       <canvas
         ref={canvasRef}
         aria-hidden

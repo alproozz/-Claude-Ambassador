@@ -81,7 +81,7 @@ export default function ColorPicker() {
   const lowContrast = contrast(color, "#FFFFFF") < 3 || contrast(color, BACKGROUND) < 3;
 
   return (
-    <div ref={containerRef} className="fixed bottom-4 left-4 z-[60]">
+    <div ref={containerRef} className="fixed bottom-4 left-4 z-40 hidden md:block">
       <AnimatePresence>
         {open && (
           <motion.div
