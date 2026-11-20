@@ -3,52 +3,102 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import SectionHeading from "@/components/SectionHeading";
+import { useLang } from "./LanguageProvider";
+
+const roleMeta = [
+  {
+    organization: "YEC Camp HIPMI PT Telkom",
+    link: "https://www.instagram.com/hipmipt.univtelkom/",
+    image: "/images/yec.jpeg",
+  },
+  {
+    organization: "Novo Club by ParagonCorp",
+    link: "https://www.paragon-innovation.com/",
+    image: "/images/novo.jpeg",
+  },
+  {
+    organization: "Google Developer Groups (GDG)",
+    link: "https://gdgbandung.com/",
+    image: "/images/gdgbdg.webp",
+  },
+  {
+    organization: "Digistar Club by Telkom Indonesia",
+    link: "https://digistartelkom.id/",
+    image: "/images/digistar.png",
+  },
+];
+
+const copy = {
+  en: {
+    heading: {
+      kicker: "Beyond Work",
+      title: "Community & Organizations",
+      lede: "Mentoring student founders, contributing to application security research, and joining digital talent programs across Telkom University & West Java.",
+    },
+    visit: "Visit community",
+    roles: [
+      {
+        title: "Team Mentor & Cohort Lead",
+        description: "Guided a 14-member student cohort in ideation, problem validation, tech stack selection, and pitch delivery.",
+      },
+      {
+        title: "Region 3 Ranger",
+        description: "Mobilized youth development, digital skills training, and leadership across West Java university networks.",
+      },
+      {
+        title: "Member, Application Security",
+        description: "Performed SBOM-based analysis of mobile apps and CI/CD pipelines, and contributed to attack-surface mapping and threat assessment.",
+      },
+      {
+        title: "Active Member / Digistars",
+        description: "Active in digital talent programs focused on business analytics, data-driven insight, and sustainable B2B growth.",
+      },
+    ],
+  },
+  id: {
+    heading: {
+      kicker: "Di Luar Pekerjaan",
+      title: "Komunitas & Organisasi",
+      lede: "Membimbing founder mahasiswa, berkontribusi pada riset keamanan aplikasi, dan mengikuti program talenta digital di Telkom University & Jawa Barat.",
+    },
+    visit: "Kunjungi komunitas",
+    roles: [
+      {
+        title: "Mentor Tim & Ketua Kohort",
+        description: "Membimbing kohort 14 mahasiswa dalam ideasi, validasi masalah, pemilihan tech stack, dan penyampaian pitch.",
+      },
+      {
+        title: "Region 3 Ranger",
+        description: "Menggerakkan pengembangan pemuda, pelatihan keterampilan digital, dan kepemimpinan di jaringan universitas se-Jawa Barat.",
+      },
+      {
+        title: "Anggota, Application Security",
+        description: "Melakukan analisis berbasis SBOM pada aplikasi mobile dan pipeline CI/CD, serta berkontribusi pada pemetaan attack surface dan penilaian ancaman.",
+      },
+      {
+        title: "Anggota Aktif / Digistars",
+        description: "Aktif dalam program talenta digital yang berfokus pada analitik bisnis, insight berbasis data, dan pertumbuhan B2B berkelanjutan.",
+      },
+    ],
+  },
+} as const;
 
 export default function Leadership() {
-  const roles = [
-    {
-      title: "Team Mentor & Cohort Lead",
-      organization: "YEC Camp HIPMI PT Telkom",
-      description: "Guided a 14-member student cohort in ideation, problem validation, tech stack selection, and pitch delivery.",
-      link: "https://www.instagram.com/hipmipt.univtelkom/",
-      image: "/images/yec.jpeg"
-    },
-    {
-      title: "Region 3 Ranger",
-      organization: "Novo Club by ParagonCorp",
-      description: "Mobilized youth development, digital skills training, and leadership across West Java university networks.",
-      link: "https://www.paragon-innovation.com/",
-      image: "/images/novo.jpeg"
-    },
-    {
-      title: "Member, Application Security",
-      organization: "Google Developer Groups (GDG)",
-      description: "Performed SBOM-based analysis of mobile apps and CI/CD pipelines, and contributed to attack-surface mapping and threat assessment.",
-      link: "https://gdgbandung.com/",
-      image: "/images/gdgbdg.webp"
-    },
-    {
-      title: "Active Member / Digistars",
-      organization: "Digistar Club by Telkom Indonesia",
-      description: "Active in digital talent programs focused on business analytics, data-driven insight, and sustainable B2B growth.",
-      link: "https://digistartelkom.id/",
-      image: "/images/digistar.png"
-    }
-  ];
+  const { lang } = useLang();
+  const t = copy[lang];
+
+  const roles = t.roles.map((r, i) => ({ ...r, ...roleMeta[i] }));
 
   return (
-    <section id="leadership" className="py-24 px-6 md:px-12 lg:px-24">
-      <div className="w-full">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4">Community & Organizations</h2>
-          <p className="text-muted text-lg max-w-2xl mb-6">
-            Communities where I learn, contribute, and help peers across tech and business.
-          </p>
-          <div className="p-4 rounded-xl bg-surface border border-accent/30 text-sm text-foreground/90 max-w-3xl flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse shrink-0"></span>
-            <span><strong>Beyond Work:</strong> Mentoring student founders, contributing to application security research, and joining digital talent programs across Telkom University & West Java.</span>
-          </div>
-        </div>
+    <section id="leadership" className="py-20 md:py-24 px-6 md:px-8">
+      <div className="mx-auto w-full max-w-6xl">
+        <SectionHeading
+          index="03"
+          kicker={t.heading.kicker}
+          title={t.heading.title}
+          lede={t.heading.lede}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {roles.map((role, idx) => (
@@ -78,8 +128,8 @@ export default function Leadership() {
                 <p className="text-sm text-muted leading-relaxed mt-auto mb-6">
                   {role.description}
                 </p>
-                <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-muted group-hover:text-accent transition-colors mt-auto">
-                  <span>Visit Community</span>
+                <div className="flex items-center gap-1.5 text-xs font-medium text-muted group-hover:text-accent transition-colors mt-auto">
+                  <span>{t.visit}</span>
                   <ArrowUpRight size={14} />
                 </div>
               </div>
