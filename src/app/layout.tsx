@@ -17,6 +17,8 @@ const newsreader = Newsreader({
 
 import IntroLoader from "@/components/IntroLoader";
 import ColorPicker from "@/components/ColorPicker";
+import { LanguageProvider } from "@/components/LanguageProvider";
+import LanguageToggle from "@/components/LanguageToggle";
 
 export const metadata: Metadata = {
   title: "M. Aulia Priadana Setiawankusuma | Portfolio",
@@ -31,9 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${newsreader.variable} h-full antialiased dark`}>
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
-        <IntroLoader />
-        {children}
-        <ColorPicker />
+        <LanguageProvider>
+          <IntroLoader />
+          {children}
+          <ColorPicker />
+          <LanguageToggle />
+        </LanguageProvider>
       </body>
     </html>
   );
