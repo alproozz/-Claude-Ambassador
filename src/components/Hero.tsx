@@ -3,7 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import PixelRevealImage from "./PixelRevealImage";
 
 export default function Hero() {
   const container: Variants = {
@@ -87,11 +87,10 @@ export default function Hero() {
           <motion.div variants={item} className="w-full lg:w-5/12 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden border border-surface-border group">
               <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/0 transition-colors z-10 duration-500"></div>
-              <Image 
-                src="/images/Foto_M.Aulia Priadana.png" 
+              <PixelRevealImage
+                src="/images/Foto_M.Aulia Priadana.png"
                 alt="M. Aulia Priadana Setiawankusuma"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                imgClassName="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
