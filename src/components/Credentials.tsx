@@ -2,8 +2,49 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight, Award } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
+import { useLang } from "./LanguageProvider";
+
+const copy = {
+  en: {
+    heading: {
+      kicker: "Credentials",
+      title: "Licenses & Certifications",
+      lede: "Continuous learning and professional validation in Business Analytics, Event Management, and Cloud AI.",
+    },
+    show: "Show credential",
+    credentialId: "Credential ID",
+    dates: [
+      "Issued Nov 2025",
+      "Issued Mar 2026",
+      "Issued Sep 2025",
+      "Issued Jul 2025",
+      "Issued Jan 2026 · Expires Jan 2029",
+      "Issued Jan 2025 · Expires Jan 2029",
+    ],
+  },
+  id: {
+    heading: {
+      kicker: "Sertifikasi",
+      title: "Lisensi & Sertifikasi",
+      lede: "Pembelajaran berkelanjutan dan validasi profesional di bidang Business Analytics, Event Management, dan Cloud AI.",
+    },
+    show: "Lihat kredensial",
+    credentialId: "ID Kredensial",
+    dates: [
+      "Terbit Nov 2025",
+      "Terbit Mar 2026",
+      "Terbit Sep 2025",
+      "Terbit Jul 2025",
+      "Terbit Jan 2026 · Berlaku hingga Jan 2029",
+      "Terbit Jan 2025 · Berlaku hingga Jan 2029",
+    ],
+  },
+} as const;
 
 export default function Credentials() {
+  const { lang } = useLang();
+  const t = copy[lang];
   const credentials = [
     {
       title: "Strategic Decision-Making: Lead Yourself & Navigate Career Growth",
@@ -50,16 +91,14 @@ export default function Credentials() {
   ];
 
   return (
-    <section id="credentials" className="py-24 px-6 md:px-12 lg:px-24">
-      <div className="w-full">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4">Licenses & Certifications</h2>
-            <p className="text-muted text-lg max-w-2xl">
-              Continuous learning and professional validation in Business Analytics, Event Management, and Cloud AI.
-            </p>
-          </div>
-        </div>
+    <section id="credentials" className="py-20 md:py-24 px-6 md:px-8">
+      <div className="mx-auto w-full max-w-6xl">
+        <SectionHeading
+          index="05"
+          kicker={t.heading.kicker}
+          title={t.heading.title}
+          lede={t.heading.lede}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {credentials.map((cred, idx) => (
@@ -80,8 +119,8 @@ export default function Credentials() {
                   {cred.issuer}
                 </p>
                 <div className="text-xs text-muted mb-4 space-y-1">
-                  <p>{cred.date}</p>
-                  <p className="font-mono text-muted/70">Credential ID {cred.credentialId}</p>
+                  <p>{t.dates[idx]}</p>
+                  <p className="font-mono text-muted/70">{t.credentialId} {cred.credentialId}</p>
                 </div>
               </div>
               <a 
@@ -90,7 +129,7 @@ export default function Credentials() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground group-hover:text-accent transition-colors mt-auto w-fit pt-4"
               >
-                <span>Show credential</span>
+                <span>{t.show}</span>
                 <ArrowUpRight size={16} />
               </a>
             </motion.div>
