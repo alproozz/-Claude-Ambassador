@@ -2,17 +2,46 @@
 
 import { motion } from "framer-motion";
 import { Compass, FileText, ShieldCheck, Workflow } from "lucide-react";
+import { useLang } from "./LanguageProvider";
+
+const copy = {
+  en: {
+    kicker: "How I Work",
+    title: "Build It Right, Keep It Running",
+    body: "I build systems and applications, and I care just as much about what keeps them reliable after launch: clear requirements, documented standards, secure access, and releases that are tested before they go live. That habit comes from working in both development and GRC roles.",
+    pillars: [
+      "Clear Requirements & Documentation",
+      "Secure & Compliant by Default",
+      "Tested, Reliable Releases",
+    ],
+    currently: "Currently",
+    currentText: "Fresh Informatics graduate, ready to contribute to teams that build and run real-world systems, and keep learning along the way.",
+  },
+  id: {
+    kicker: "Cara Saya Bekerja",
+    title: "Bangun dengan Benar, Jaga Tetap Berjalan",
+    body: "Saya membangun sistem dan aplikasi, dan sama pedulinya pada hal-hal yang menjaganya tetap andal setelah diluncurkan: kebutuhan yang jelas, standar yang terdokumentasi, akses yang aman, dan rilis yang diuji sebelum tayang. Kebiasaan itu terbentuk dari pengalaman di peran development sekaligus GRC.",
+    pillars: [
+      "Kebutuhan & Dokumentasi yang Jelas",
+      "Aman & Patuh sejak Awal",
+      "Rilis Teruji & Andal",
+    ],
+    currently: "Saat Ini",
+    currentText: "Fresh graduate Informatika, siap berkontribusi di tim yang membangun dan mengoperasikan sistem nyata, sambil terus belajar.",
+  },
+} as const;
+
+const pillarIcons = [FileText, ShieldCheck, Workflow];
 
 export default function Approach() {
-  const pillars = [
-    { icon: FileText, label: "Clear Requirements & Documentation" },
-    { icon: ShieldCheck, label: "Secure & Compliant by Default" },
-    { icon: Workflow, label: "Tested, Reliable Releases" },
-  ];
+  const { lang } = useLang();
+  const t = copy[lang];
+
+  const pillars = t.pillars.map((label, i) => ({ icon: pillarIcons[i], label }));
 
   return (
-    <section className="py-16 px-6 md:px-12 lg:px-24">
-      <div className="w-full">
+    <section className="py-16 px-6 md:px-8">
+      <div className="mx-auto w-full max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,13 +56,13 @@ export default function Approach() {
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/40 bg-accent/10 text-xs font-medium text-accent mb-4">
                 <Compass size={14} />
-                How I Work
+                {t.kicker}
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-medium text-foreground mb-4">
-                Build It Right, Keep It Running
+                {t.title}
               </h2>
               <p className="text-muted text-base md:text-lg leading-relaxed mb-6">
-                I build systems and applications, and I care just as much about what keeps them reliable after launch: clear requirements, documented standards, secure access, and releases that are tested before they go live. That habit comes from working in both development and GRC roles.
+                {t.body}
               </p>
               <div className="flex flex-wrap items-center gap-6 text-xs text-muted font-medium">
                 {pillars.map(({ icon: Icon, label }) => (
@@ -46,9 +75,9 @@ export default function Approach() {
             </div>
 
             <div className="w-full lg:w-auto flex flex-col items-start lg:items-end gap-3 border-t lg:border-t-0 lg:border-l border-surface-border pt-6 lg:pt-0 lg:pl-10">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted">Currently</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-muted">{t.currently}</span>
               <p className="text-sm text-foreground/90 font-medium max-w-xs lg:text-right">
-                Fresh Informatics graduate, ready to contribute to teams that build and run real-world systems, and keep learning along the way.
+                {t.currentText}
               </p>
             </div>
           </div>
