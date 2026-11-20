@@ -17,7 +17,16 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground antialiased selection:bg-accent/30;
+  }
+
+  /* Keep anchored section titles clear of the sticky navbar. */
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 }
