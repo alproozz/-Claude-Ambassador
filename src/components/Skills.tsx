@@ -1,58 +1,108 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Cpu, Database, ShieldCheck } from "lucide-react";
+import { Code2, Database, ShieldCheck } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
+import { useLang } from "./LanguageProvider";
+
+const copy = {
+  en: {
+    heading: {
+      kicker: "Skills & Expertise",
+      title: "Core Capabilities",
+      lede: "Hands-on development skills, supported by experience in governance, data, and security.",
+    },
+    categories: [
+      {
+        title: "System & Application Development",
+        skills: [
+          "Web Apps (React, Next.js, Laravel)",
+          "Mobile Apps (Flutter)",
+          "Languages (Python, Java, PHP, C++)",
+          "WordPress Administration & SEO",
+          "Git & Preview-to-Live Deployments",
+        ],
+      },
+      {
+        title: "Governance, Risk & Compliance",
+        skills: [
+          "GRC & ISO Compliance Review",
+          "Third-Party & Procurement Risk",
+          "Access Control & Security Checks",
+          "SOP & System Documentation",
+          "Requirements Analysis (SRS, UML)",
+        ],
+      },
+      {
+        title: "Data & Security",
+        skills: [
+          "Data Analysis (Excel, Power BI)",
+          "Machine Learning (Python, Google Colab)",
+          "Security Testing (Burp Suite, OWASP ZAP)",
+          "Network & Forensics (Wireshark, Kali Linux)",
+          "Command Line (Linux, Windows)",
+        ],
+      },
+    ],
+  },
+  id: {
+    heading: {
+      kicker: "Keahlian",
+      title: "Kemampuan Inti",
+      lede: "Keterampilan pengembangan langsung, didukung pengalaman di bidang tata kelola, data, dan keamanan.",
+    },
+    categories: [
+      {
+        title: "Pengembangan Sistem & Aplikasi",
+        skills: [
+          "Aplikasi Web (React, Next.js, Laravel)",
+          "Aplikasi Mobile (Flutter)",
+          "Bahasa Pemrograman (Python, Java, PHP, C++)",
+          "Administrasi WordPress & SEO",
+          "Git & Deployment Preview-ke-Live",
+        ],
+      },
+      {
+        title: "Tata Kelola, Risiko & Kepatuhan",
+        skills: [
+          "Review Kepatuhan GRC & ISO",
+          "Risiko Pihak Ketiga & Pengadaan",
+          "Kontrol Akses & Pemeriksaan Keamanan",
+          "SOP & Dokumentasi Sistem",
+          "Analisis Kebutuhan (SRS, UML)",
+        ],
+      },
+      {
+        title: "Data & Keamanan",
+        skills: [
+          "Analisis Data (Excel, Power BI)",
+          "Machine Learning (Python, Google Colab)",
+          "Pengujian Keamanan (Burp Suite, OWASP ZAP)",
+          "Jaringan & Forensik (Wireshark, Kali Linux)",
+          "Command Line (Linux, Windows)",
+        ],
+      },
+    ],
+  },
+} as const;
+
+const categoryIcons = [Code2, ShieldCheck, Database];
 
 export default function Skills() {
-  const skillCategories = [
-    {
-      icon: Code2,
-      title: "System & Application Development",
-      skills: [
-        "Web Apps (React, Next.js, Laravel)",
-        "Mobile Apps (Flutter)",
-        "Languages (Python, Java, PHP, C++)",
-        "WordPress Administration & SEO",
-        "Git & Preview-to-Live Deployments"
-      ]
-    },
-    {
-      icon: ShieldCheck,
-      title: "Governance, Risk & Compliance",
-      skills: [
-        "GRC & ISO Compliance Review",
-        "Third-Party & Procurement Risk",
-        "Access Control & Security Checks",
-        "SOP & System Documentation",
-        "Requirements Analysis (SRS, UML)"
-      ]
-    },
-    {
-      icon: Database,
-      title: "Data & Security",
-      skills: [
-        "Data Analysis (Excel, Power BI)",
-        "Machine Learning (Python, Google Colab)",
-        "Security Testing (Burp Suite, OWASP ZAP)",
-        "Network & Forensics (Wireshark, Kali Linux)",
-        "Command Line (Linux, Windows)"
-      ]
-    }
-  ];
+  const { lang } = useLang();
+  const t = copy[lang];
+
+  const skillCategories = t.categories.map((cat, i) => ({ ...cat, icon: categoryIcons[i] }));
 
   return (
-    <section id="capabilities" className="py-20 px-6 md:px-12 lg:px-24 bg-surface/50 border-y border-surface-border">
-      <div className="w-full">
-        <div className="mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/30 bg-accent/10 text-xs font-medium text-accent mb-4">
-            <Cpu size={14} />
-            Skills & Expertise
-          </div>
-          <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4">Core Capabilities</h2>
-          <p className="text-muted text-lg max-w-2xl">
-            Hands-on development skills, supported by experience in governance, data, and security.
-          </p>
-        </div>
+    <section id="capabilities" className="py-20 md:py-24 px-6 md:px-8 bg-surface/50 border-y border-surface-border">
+      <div className="mx-auto w-full max-w-6xl">
+        <SectionHeading
+          index="02"
+          kicker={t.heading.kicker}
+          title={t.heading.title}
+          lede={t.heading.lede}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skillCategories.map((cat, idx) => {
